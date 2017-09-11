@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Voa Dashboard
+    </title>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+    <script type="text/javascript" src="js/voa.js"></script>
+  </head>
+  <body>
+    <div id="page-container">
+            <div id="station-title"></div>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Graphics</a></li>
+                    <li><a href="#tabs-2">Current</a></li>
+                    <li><a href="#tabs-3">Data per 24 hour</a></li>
+                    <li><a href="#tabs-4">Map</a></li>
+                    <li><a href="#tabs-5">Preferences</a></li>
+                </ul>
+
+                <div id="dashboardVoa1">
+                    <div id="tabs-1">
+                        <h3>Select time range</h3>
+                            <label for="from">From</label>
+                            <input type="text" id="from" name="from" />
+                            <label for="to">to</label>
+                            <input type="text" id="to" name="to" />
+                            <button id="setdatetime" name="setdatetime" style="margin-left: 5px; margin-top: -5px" >Apply</button>
+                            <div id="progressbar1" class="progressbar-hide"><div id="label1" class="progress-label">Please wait .. loading data ...</div></div>
+                            <div id="vspacer4"></div>
+                            <div id="rain_line_1_div"></div>
+                            <div id="dateTime1_div"; style="width: 95%; height: 40px"></div>
+                            <div id="rain_line_2_div";></div>
+                            <div id="dateTime2_div"; style="width: 95%; height: 40px"></div>
+                            <div id="rain_line_3_div"></div>
+                            <div id="dateTime3_div"; style="width: 95%; height: 40px"></div>
+                            <div id="rain_line_4_div"></div>
+                            <div id="dateTime4_div"; style="width: 95%; height: 40px"></div>
+                    </div>
+                </div>
+
+
+                <div id="dashboardVoa">
+                    <div id="tabs-2">
+                        <br><h3>Information for last 10 minutes</h3>
+                        <div id="strFilter_div"></div>
+                        <br><div id="dataVoa_div"></div>
+                        <br><h3>Detailed information for last 10 minutes</h3>
+                        <div id="table_div"></div>
+                        <br><h3>Information for last 24 hours</h3>
+                        <div id="strFilterSt_div"></div>
+                        <br><div id="table_st_div"></div>
+                    </div>
+                </div>
+
+                <div id="dashboardVoa24hour">
+                    <div id="tabs-3">
+                        <label for="date">Date</label>
+                        <div>
+                            <input type="text" id="date" name="date" />
+                            <button id="setdate" name="setdate" style="margin-left: 5px; margin-top: -5px" >Apply</button>
+                        </div>
+
+                        <table align="center">
+                            <tr valign="top">
+                                <td>
+                                    <h3 align="center">Gostomel</h3>
+                                    <div id="table_24h_div_1"></div>
+                                </td>
+                                <td>
+                                    <h3 align="center">Baryshivka</h3>
+                                    <div id="table_24h_div_2"></div>
+                                </td>
+                                <td>
+                                    <h3 align="center">Bila tserkva</h3>
+                                    <div id="table_24h_div_3"></div>
+                                </td>
+                                <td>
+                                    <h3 align="center">Oster</h3>
+                                    <div id="table_24h_div_4"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="Map">
+                    <div id="tabs-4">
+                        <div id="map-canvas" style="height: 900px;"></div>
+                    </div>
+                </div>
+
+                <div id="tabs-5">
+                   <div id="dialog2" title="Cookie Message">
+                        <p><span class="ui-icon ui-icon-alert"></span>
+                            This website uses cookies to remember your preferences.
+                        </p>
+                   </div>
+                   <div id="accordion">
+                        <h3>Zoom in on current time range</h3>
+                        <div class="pane" style="height: 200px;"><div id="dateTime_div1"></div></div>
+                        <h3>Data Filter</h3>
+                        <div class="pane" style="height: 100px;">
+                            <div id="radio_filter">
+                                <input type="radio" id="radio_filter1" name="radio_filter" value="FilterOff" /><label for="radio_filter1">Do not filter data</label>
+                                <input type="radio" id="radio_filter2" name="radio_filter" value="FilterOn" /><label for="radio_filter2">Filter data</label>
+                            </div>
+                            <div id="vspacer5"></div>
+                            <div id="progressbar3" class="progressbar-hide"><div id="label3" class="progress-label">Please wait .. filtering data ...</div></div>
+                        </div>
+                        <h3>Version information</h3>
+                        <div class="pane" style="height: 175px;">
+                            <p>
+                                Version 1.0.0<br />
+                                2015 - Oleksandr Yuvchenko - ol.yuvchenko@gmail.com
+                            </p>
+                            <p>
+                                This program is develop for the SE "UAMC".
+                            </p>
+                        </div>
+                   </div>
+                </div>
+
+            </div>
+
+            <div id="footer">
+                SE UAMC Voa Dashboard
+            </div>
+    </div>
+  </body>
+</html>
